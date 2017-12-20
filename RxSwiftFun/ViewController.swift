@@ -25,13 +25,13 @@ class ViewController: UIViewController {
             configureCell: { ds, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StandingsCellIdentifier", for: indexPath) as! StandingsCell
                 cell.placeLabel?.text = String(item.place)
-                cell.nameLabel?.text = item.racerName
+                cell.nameLabel?.text = item.racerDetails.firstName + " " + item.racerDetails.lastName
                 cell.constructorLabel?.text = item.constructorName
                 cell.pointsLabel?.text = String(item.points)
                 return cell
         })
 
-        viewModel.getStandings().map{
+        NetworkManager.getStandings().map{
                 [SectionOfStandings(header: "First Section", items: $0)]
             }.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 

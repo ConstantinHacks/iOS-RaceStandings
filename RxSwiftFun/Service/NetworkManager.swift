@@ -21,12 +21,19 @@ struct NetworkManager {
     }
     private static let disposeBag = DisposeBag()
 
-    static func getStandings(username: String, password: String) -> Observable<Standings> {
+    static func getStandings() -> Observable<[Standings]> {
         let path = Constants.Network.currentLeaderBoard
         
-        return jsonArray(.get, path)
-            .map({ jsonArray in
-                return jsonArray.map { Standings($0)}
+        return json(.get, path)
+            .map({ json in
+                guard let MRdata = json["MRData"] as? JSON,
+                let standingsTable = MRdata["StandingsTable"] as? JSON,
+                let driverStandings = standingsTable["DriverStandings"] as? JSON
+                    else{
+                        throw NetworkError.unknownResponse
+                }
+                
+                return [Standings(driverStandings)!]
             })
     }
     

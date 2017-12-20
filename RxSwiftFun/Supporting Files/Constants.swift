@@ -22,7 +22,7 @@ var isPhoneX: Bool {
 struct Constants {
 
     struct Network {
-        static let rootURL: String = "http://ergast.com/api/f1/"
+        static let rootURL: String = "https://ergast.com/api/f1/"
         static let currentLeaderBoard: String = rootURL + "2017/driverStandings.json"
     }
     

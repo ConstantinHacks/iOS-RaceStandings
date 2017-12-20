@@ -14,10 +14,17 @@ import RxDataSources
 
 
 struct Standings {
-    let place: Int
-    let racerName: String
+    let place: String
+    let racerDetails: Racer
     let constructorName: String
-    let points: Double
+    let points: String
+    
+    init?(_ json: JSON) {
+        place = json["position"] as? String ?? ""
+        racerDetails = Racer(json["Driver"] as! JSON)
+        constructorName = "VAUXHALL"
+        points = json["points"] as? String ?? ""
+    }
 }
 
 struct SectionOfStandings {
