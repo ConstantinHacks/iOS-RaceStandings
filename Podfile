@@ -8,5 +8,5 @@ target 'RxSwiftFun' do
   # Pods for RxSwiftFun
     pod 'RxSwift'
     pod 'RxDataSources'
-
+    pod 'RxAlamofire'
 end

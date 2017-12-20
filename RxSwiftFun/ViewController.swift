@@ -35,8 +35,6 @@ class ViewController: UIViewController {
                 [SectionOfStandings(header: "First Section", items: $0)]
             }.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 
-            }).disposed(by: self.disposeBag)
-
     }
 
     override func didReceiveMemoryWarning() {
