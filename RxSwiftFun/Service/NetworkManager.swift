@@ -11,6 +11,22 @@ import RxAlamofire
 import Alamofire
 import Foundation
 
+
+// MARK: - ServiceResult
+
+/// A representation of the result of a service request.
+///
+/// - Success: Indicates that the request successfully completed. The
+///             resulting data is supplied.
+/// - Failure: Indicates that the request failed. The underlying cause
+///             of the failure is supplied with a ServiceError.
+enum ServiceResult<T> {
+    case Success(T)
+    case Failure(Error)
+}
+
+typealias JSONAttributes = [String:Any]
+
 struct NetworkManager {
     static let session = SessionManager()
     static var headers: HTTPHeaders {
@@ -21,87 +37,62 @@ struct NetworkManager {
     }
     private static let disposeBag = DisposeBag()
 
-    static func getStandings() -> Observable<[Standings]> {
+    static func getStandings(completion: @escaping(ServiceResult<[Standings]>?) -> Void) {
         let path = Constants.Network.currentLeaderBoard
         
-        return json(.get, path)
-            .map({ json in
-                guard let MRdata = json["MRData"] as? JSON,
-                let standingsTable = MRdata["StandingsTable"] as? JSON,
-                let driverStandings = standingsTable["DriverStandings"] as? JSON
-                    else{
-                        throw NetworkError.unknownResponse
+        RxAlamofire.requestJSON(.get,path)
+            .debug()
+            .subscribe(onNext:{ json in
+                if let dict = json as? JSONAttributes{
+                    let mrData = dict["MRData"] as! Dictionary<String,AnyObject>
                 }
+            }).dispose(by: disposeBag)
+
+
                 
-                return [Standings(driverStandings)!]
-            })
-    }
-    
-}
+//        RxAlamofire.requestJSON(
+//            URL(string: path)!,
+//            .get)
+//        .validate()
+//        .responseJSON { (response) -> Void in
+//            guard response.result.isSuccess else{
+//                print("Error: \(String(describing: response.result.error))")
+//                completion(nil)
+//                return
+//            }
+//
+//            guard let value = response.result.value as? JSONAttributes,
+//                let mrData = value["MRData"] as? JSONAttributes,
+//                let standingsTable = mrData["StandingsTable:"] as? JSONAttributes,
+//                let standingsList = standingsTable["StandingsLists"] as? JSONAttributes,
+//                let driverStandings = standingsList["DriverStandings"] as? [JSONAttributes]
+//                else{
+//                    return
+//                }
+//
+//            let leaderboard = driverStandings.flatMap({ (leaderBoardDict) -> Standings? in
+//                return Standings(leaderBoardDict)
+//            })
+//
+//            completion(ServiceResult.Success(leaderboard))
+//
+//        }
+        
+        
+            
+        
+//        return json(.get, path)
+//            .map({ json in
+//                guard let MRdata = json["MRData"] as? JSON,
+//                let standingsTable = MRdata["StandingsTable"] as? JSON,
+//                let standingsList = standingsTable["StandingsLists"] as? JSON,
+//                    let driverStandings = standingsList["DriverStandings"] as? [JSON]
+//                    else{
+//                        throw NetworkError.unknownResponse
+//                }
+//
+//                return [Standings(driverStandings)!]
+//            })
 
-typealias JSON = [String: Any]
-
-/**
- Identifies any model that can be instantiated by a `JSON` object
- */
-protocol JSONConvertable {
-    init(_ json: JSON)
-    var isValid: Bool { get }
-}
-
-extension NetworkManager {
-    
-    private static func json(_ method: HTTPMethod, _ url: URLConvertible, parameters: [String : Any]? = nil, encoding: ParameterEncoding = JSONEncoding.default) -> Observable<JSON> {
         
-        return jsonArray(method, url, parameters: parameters, encoding: encoding)
-            .map { jsonArray throws -> JSON in
-                if jsonArray.count == 1, let json = jsonArray.first {
-                    return json
-                }
-                throw NetworkError.unknownResponse
-        }
     }
-    
-    private static func jsonArray(_ method: HTTPMethod, _ url: URLConvertible, parameters: [String : Any]? = nil, encoding: ParameterEncoding = JSONEncoding.default) -> Observable<[JSON]> {
-        
-        let serializer = DataResponseSerializer { (_, _, data, _) -> Result<[JSON]> in
-            do {
-                let json = try self.extractJSONCollection(from: data)
-                return Result.success(json)
-            } catch {
-                return Result.failure(error)
-            }
-        }
-        
-        return session.rx
-            .request(method, url, parameters: parameters, encoding: encoding, headers: headers)
-            .flatMap { $0.rx.result(responseSerializer: serializer) }
-    }
-    
-    /// Receives data returned from a network call and throws if any error is found or JSON can't be extracted. An array is returned for simpler reuse.
-    private static func extractJSONCollection(from data: Data?) throws -> [JSON] {
-        guard let data = data else {
-            // Something has gone horribly wrong
-            throw NetworkError.unknownResponse
-        }
-        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
-            // No JSON in response
-            throw NetworkError.unknownResponse
-        }
-        
-        if let jsonArray = jsonObject as? [JSON] {
-            return jsonArray
-        }
-        
-        guard let json = jsonObject as? JSON else {
-            throw NetworkError.unknownResponse
-        }
-        // Check for error message in JSON
-        if let errorCode = json["error"] as? String {
-            throw NetworkError.error(forCode: errorCode)
-        } else {
-            return [json]
-        }
-    }
-}
-

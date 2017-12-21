@@ -13,7 +13,7 @@ struct Racer{
     let lastName: String
     let nationality: String
     
-    init(_ json:JSON){
+    init(_ json:JSONAttributes){
         firstName = json["givenName"] as? String ?? ""
         lastName = json["familyName"] as? String ?? ""
         nationality = json["nationality"] as? String ?? ""

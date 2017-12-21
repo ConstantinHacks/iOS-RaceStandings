@@ -30,10 +30,11 @@ class ViewController: UIViewController {
                 cell.pointsLabel?.text = String(item.points)
                 return cell
         })
+        
 
-        NetworkManager.getStandings().map{
-                [SectionOfStandings(header: "First Section", items: $0)]
-            }.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
+//        NetworkManager.getStandings().map{
+//                [SectionOfStandings(header: "First Section", items: $0)]
+//            }.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 
     }
 

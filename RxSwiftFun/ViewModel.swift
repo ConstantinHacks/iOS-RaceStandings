@@ -13,5 +13,17 @@ import RxDataSources
 
 class ViewModel {
     
+    private let standings: Observable<Standings>
+    
+    init(){
+        standings = NetworkManager.getStandings()
+            .flatMapLatest{
+                
+        }
+    }
+    
+    func getStandings(onSuccess: @escaping (Standings) -> Void){
+        
+    }
 
 }

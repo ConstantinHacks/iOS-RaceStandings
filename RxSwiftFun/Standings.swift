@@ -19,9 +19,9 @@ struct Standings {
     let constructorName: String
     let points: String
     
-    init?(_ json: JSON) {
+    init?(_ json: JSONAttributes) {
         place = json["position"] as? String ?? ""
-        racerDetails = Racer(json["Driver"] as! JSON)
+        racerDetails = Racer(json["Driver"] as! JSONAttributes)
         constructorName = "VAUXHALL"
         points = json["points"] as? String ?? ""
     }
