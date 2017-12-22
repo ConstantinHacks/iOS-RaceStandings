@@ -31,7 +31,13 @@ class ViewController: UIViewController {
                 return cell
         })
         
-
+        NetworkManager.getStandings(){ standings in
+                let sections = [SectionOfStandings(header: "First Section", items: standings)]
+                Observable.just(sections)
+                    .bind(to: self.collectionView.rx.items(dataSource: dataSource))
+                    .disposed(by: self.disposeBag)
+            }
+        
 //        NetworkManager.getStandings().map{
 //                [SectionOfStandings(header: "First Section", items: $0)]
 //            }.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)

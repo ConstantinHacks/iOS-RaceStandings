@@ -10,7 +10,7 @@
 import Foundation
 import RxSwift
 import RxDataSources
-
+import SwiftyJSON
 
 
 struct Standings {
@@ -19,11 +19,11 @@ struct Standings {
     let constructorName: String
     let points: String
     
-    init?(_ json: JSONAttributes) {
-        place = json["position"] as? String ?? ""
-        racerDetails = Racer(json["Driver"] as! JSONAttributes)
+    init?(_ json: JSON) {
+        place = json["position"].stringValue
+        racerDetails = Racer(json["Driver"])
         constructorName = "VAUXHALL"
-        points = json["points"] as? String ?? ""
+        points = json["points"].stringValue
     }
 }
 

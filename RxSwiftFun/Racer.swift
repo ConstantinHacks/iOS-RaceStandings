@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Racer{
     let firstName: String
     let lastName: String
     let nationality: String
     
-    init(_ json:JSONAttributes){
-        firstName = json["givenName"] as? String ?? ""
-        lastName = json["familyName"] as? String ?? ""
-        nationality = json["nationality"] as? String ?? ""
+    init(_ json:JSON){
+        firstName = json["givenName"].stringValue
+        lastName = json["familyName"].stringValue
+        nationality = json["nationality"].stringValue
     }
 }

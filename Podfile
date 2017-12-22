@@ -9,4 +9,5 @@ target 'RxSwiftFun' do
     pod 'RxSwift'
     pod 'RxDataSources'
     pod 'RxAlamofire'
+    pod 'SwiftyJSON'
 end
