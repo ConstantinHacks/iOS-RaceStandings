@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+
+class SettingsViewController : UIViewController {
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.topItem?.title = "Settings"
+    }
+}

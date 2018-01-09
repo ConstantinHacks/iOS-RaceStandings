@@ -20,6 +20,7 @@
 		0D804B421FEB066800F0F2A8 /* Racer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B411FEB066800F0F2A8 /* Racer.swift */; };
 		0DE35D73200553E3008AB75C /* RacerStandings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE35D72200553E3008AB75C /* RacerStandings.storyboard */; };
 		0DE35D7620056188008AB75C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE35D7520056188008AB75C /* SettingsViewController.swift */; };
+		0DE35D782005634D008AB75C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE35D772005634D008AB75C /* Settings.storyboard */; };
 		3DBB04D2D26E8AAED62DF021 /* Pods_RaceStandings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F42DEA8BF2BF358087E386 /* Pods_RaceStandings.framework */; };
 		BD9B113F1FEDCD0400B1953C /* Constructors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B113E1FEDCD0400B1953C /* Constructors.swift */; };
 		BDE06FF720046AE0008D7661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE06FF620046AE0008D7661 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		0D804B411FEB066800F0F2A8 /* Racer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racer.swift; sourceTree = "<group>"; };
 		0DE35D72200553E3008AB75C /* RacerStandings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RacerStandings.storyboard; sourceTree = "<group>"; };
 		0DE35D7520056188008AB75C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0DE35D772005634D008AB75C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		30EAABC593BAACF63DCC4AA8 /* Pods-RaceStandings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaceStandings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaceStandings/Pods-RaceStandings.debug.xcconfig"; sourceTree = "<group>"; };
 		BD9B113E1FEDCD0400B1953C /* Constructors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constructors.swift; sourceTree = "<group>"; };
 		BDE06FF620046AE0008D7661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 			children = (
 				0DE35D7420056064008AB75C /* Settings */,
 				0D804B241FE85D9F00F0F2A8 /* Main.storyboard */,
-				0DE35D71200551B8008AB75C /* Main */,
+				0DE35D71200551B8008AB75C /* RacerStandings */,
 				BD9B113D1FEDCC7200B1953C /* Models */,
 				0D804B3C1FEAF79F00F0F2A8 /* Supporting Files */,
 				0D804B391FEAF5AE00F0F2A8 /* Service */,
@@ -115,7 +117,7 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0DE35D71200551B8008AB75C /* Main */ = {
+		0DE35D71200551B8008AB75C /* RacerStandings */ = {
 			isa = PBXGroup;
 			children = (
 				0D804B351FE9A65700F0F2A8 /* ViewModel.swift */,
@@ -123,13 +125,14 @@
 				0D804B371FE9C75000F0F2A8 /* StandingsCell.swift */,
 				0DE35D72200553E3008AB75C /* RacerStandings.storyboard */,
 			);
-			path = Main;
+			path = RacerStandings;
 			sourceTree = "<group>";
 		};
 		0DE35D7420056064008AB75C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				0DE35D7520056188008AB75C /* SettingsViewController.swift */,
+				0DE35D772005634D008AB75C /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				0D804B2B1FE85D9F00F0F2A8 /* LaunchScreen.storyboard in Resources */,
 				BDE06FF720046AE0008D7661 /* Assets.xcassets in Resources */,
 				0D804B261FE85D9F00F0F2A8 /* Main.storyboard in Resources */,
+				0DE35D782005634D008AB75C /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
