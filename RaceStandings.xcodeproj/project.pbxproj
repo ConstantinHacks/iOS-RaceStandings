@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D804B1D1FE85D9F00F0F2A8 /* RxSwiftFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D804B1D1FE85D9F00F0F2A8 /* RaceStandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceStandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D804B201FE85D9F00F0F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D804B221FE85D9F00F0F2A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D804B251FE85D9F00F0F2A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				BDE06FF620046AE0008D7661 /* Assets.xcassets */,
-				0D804B1F1FE85D9F00F0F2A8 /* RxSwiftFun */,
+				0D804B1F1FE85D9F00F0F2A8 /* RaceStandings */,
 				0D804B1E1FE85D9F00F0F2A8 /* Products */,
 				6EC5A28C03F7632F58A866C2 /* Pods */,
 				360F9E83E499785AD69D9D04 /* Frameworks */,
@@ -70,12 +70,12 @@
 		0D804B1E1FE85D9F00F0F2A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0D804B1D1FE85D9F00F0F2A8 /* RxSwiftFun.app */,
+				0D804B1D1FE85D9F00F0F2A8 /* RaceStandings.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0D804B1F1FE85D9F00F0F2A8 /* RxSwiftFun */ = {
+		0D804B1F1FE85D9F00F0F2A8 /* RaceStandings */ = {
 			isa = PBXGroup;
 			children = (
 				BD9B113D1FEDCC7200B1953C /* Models */,
@@ -89,7 +89,7 @@
 				0D804B351FE9A65700F0F2A8 /* ViewModel.swift */,
 				0D804B371FE9C75000F0F2A8 /* StandingsCell.swift */,
 			);
-			path = RxSwiftFun;
+			path = RaceStandings;
 			sourceTree = "<group>";
 		};
 		0D804B391FEAF5AE00F0F2A8 /* Service */ = {
@@ -139,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0D804B1C1FE85D9F00F0F2A8 /* RxSwiftFun */ = {
+		0D804B1C1FE85D9F00F0F2A8 /* RaceStandings */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D804B2F1FE85D9F00F0F2A8 /* Build configuration list for PBXNativeTarget "RxSwiftFun" */;
+			buildConfigurationList = 0D804B2F1FE85D9F00F0F2A8 /* Build configuration list for PBXNativeTarget "RaceStandings" */;
 			buildPhases = (
 				59510DDE8741D14598C7933D /* [CP] Check Pods Manifest.lock */,
 				0D804B191FE85D9F00F0F2A8 /* Sources */,
@@ -154,9 +154,9 @@
 			);
 			dependencies = (
 			);
-			name = RxSwiftFun;
+			name = RaceStandings;
 			productName = RxSwiftFun;
-			productReference = 0D804B1D1FE85D9F00F0F2A8 /* RxSwiftFun.app */;
+			productReference = 0D804B1D1FE85D9F00F0F2A8 /* RaceStandings.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +175,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0D804B181FE85D9F00F0F2A8 /* Build configuration list for PBXProject "RxSwiftFun" */;
+			buildConfigurationList = 0D804B181FE85D9F00F0F2A8 /* Build configuration list for PBXProject "RaceStandings" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -188,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0D804B1C1FE85D9F00F0F2A8 /* RxSwiftFun */,
+				0D804B1C1FE85D9F00F0F2A8 /* RaceStandings */,
 			);
 		};
 /* End PBXProject section */
@@ -426,9 +426,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AR8AX3MJ2B;
-				INFOPLIST_FILE = RxSwiftFun/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RaceStandings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = constantin.RxSwiftFun;
+				PRODUCT_BUNDLE_IDENTIFIER = constantin.RaceStandings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,9 +442,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AR8AX3MJ2B;
-				INFOPLIST_FILE = RxSwiftFun/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RaceStandings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = constantin.RxSwiftFun;
+				PRODUCT_BUNDLE_IDENTIFIER = constantin.RaceStandings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D804B181FE85D9F00F0F2A8 /* Build configuration list for PBXProject "RxSwiftFun" */ = {
+		0D804B181FE85D9F00F0F2A8 /* Build configuration list for PBXProject "RaceStandings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D804B2D1FE85D9F00F0F2A8 /* Debug */,
@@ -463,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D804B2F1FE85D9F00F0F2A8 /* Build configuration list for PBXNativeTarget "RxSwiftFun" */ = {
+		0D804B2F1FE85D9F00F0F2A8 /* Build configuration list for PBXNativeTarget "RaceStandings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D804B301FE85D9F00F0F2A8 /* Debug */,
