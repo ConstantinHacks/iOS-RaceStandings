@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RacerStandingsViewController.swift
 //  RxSwiftFun
 //
 //  Created by Constantin Koehler on 12/18/17.
@@ -10,29 +10,29 @@ import UIKit
 import RxSwift
 import RxDataSources
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class RacerStandingsViewController: UIViewController {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var selectYearLabel: UIBarButtonItem!
     
-    var pickerView: UIPickerView = UIPickerView()
+    
     var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfStandings>?
     let disposeBag = DisposeBag()
     let viewModel = ViewModel()
-    
-    
+    let years = Array(Year.minimumYear...Year.currentYear())
+    var selectedYear : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pickerView.delegate = self
-        pickerView.dataSource = self
+//        setUpPickerView()
+//        createToolBar()
         
         selectYearLabel.target = self
         selectYearLabel.action = #selector(selectYearPressed)
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Standings"
+        navigationController?.navigationBar.topItem?.title = "Standings (\(Year.currentYear()))"
         
         let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfStandings>(
             configureCell: { ds, collectionView, indexPath, item in
@@ -53,9 +53,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     }
 
+    func setUpPickerView(){
+//        pickerView.delegate = self
+//        pickerView.dataSource = self
+//        pickerView.isHidden = true
+    }
+    
+    func createToolBar() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,action: #selector(RacerStandingsViewController.dismissKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     @objc private func selectYearPressed() {
         print("Select Year Pressed")
-        self.view.addSubview(pickerView)
+//        pickerView.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,6 +86,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //MARK: Delegate Methods
     
+    
+
+    
+    
+}
+
+extension RacerStandingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -75,8 +103,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let years = Array(Year.minimumYear...Year.currentYear())
         return String(years[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedYear = years[row]
+        navigationController?.navigationBar.topItem?.title = "Standings (\(selectedYear!))"
+
     }
 }
 

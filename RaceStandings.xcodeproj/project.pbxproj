@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D804B211FE85D9F00F0F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B201FE85D9F00F0F2A8 /* AppDelegate.swift */; };
-		0D804B231FE85D9F00F0F2A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B221FE85D9F00F0F2A8 /* ViewController.swift */; };
+		0D804B231FE85D9F00F0F2A8 /* RacerStandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B221FE85D9F00F0F2A8 /* RacerStandingsViewController.swift */; };
 		0D804B261FE85D9F00F0F2A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D804B241FE85D9F00F0F2A8 /* Main.storyboard */; };
 		0D804B2B1FE85D9F00F0F2A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D804B291FE85D9F00F0F2A8 /* LaunchScreen.storyboard */; };
 		0D804B331FE86AE400F0F2A8 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B321FE86AE400F0F2A8 /* Standings.swift */; };
@@ -18,6 +18,8 @@
 		0D804B3E1FEAF84F00F0F2A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B3D1FEAF84F00F0F2A8 /* Constants.swift */; };
 		0D804B401FEB02F900F0F2A8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B3F1FEB02F900F0F2A8 /* NetworkError.swift */; };
 		0D804B421FEB066800F0F2A8 /* Racer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B411FEB066800F0F2A8 /* Racer.swift */; };
+		0DE35D73200553E3008AB75C /* RacerStandings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE35D72200553E3008AB75C /* RacerStandings.storyboard */; };
+		0DE35D7620056188008AB75C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE35D7520056188008AB75C /* SettingsViewController.swift */; };
 		3DBB04D2D26E8AAED62DF021 /* Pods_RaceStandings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F42DEA8BF2BF358087E386 /* Pods_RaceStandings.framework */; };
 		BD9B113F1FEDCD0400B1953C /* Constructors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B113E1FEDCD0400B1953C /* Constructors.swift */; };
 		BDE06FF720046AE0008D7661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE06FF620046AE0008D7661 /* Assets.xcassets */; };
@@ -27,7 +29,7 @@
 /* Begin PBXFileReference section */
 		0D804B1D1FE85D9F00F0F2A8 /* RaceStandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceStandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D804B201FE85D9F00F0F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D804B221FE85D9F00F0F2A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D804B221FE85D9F00F0F2A8 /* RacerStandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacerStandingsViewController.swift; sourceTree = "<group>"; };
 		0D804B251FE85D9F00F0F2A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D804B2A1FE85D9F00F0F2A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D804B2C1FE85D9F00F0F2A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		0D804B3D1FEAF84F00F0F2A8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0D804B3F1FEB02F900F0F2A8 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0D804B411FEB066800F0F2A8 /* Racer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racer.swift; sourceTree = "<group>"; };
+		0DE35D72200553E3008AB75C /* RacerStandings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RacerStandings.storyboard; sourceTree = "<group>"; };
+		0DE35D7520056188008AB75C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		30EAABC593BAACF63DCC4AA8 /* Pods-RaceStandings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaceStandings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaceStandings/Pods-RaceStandings.debug.xcconfig"; sourceTree = "<group>"; };
 		BD9B113E1FEDCD0400B1953C /* Constructors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constructors.swift; sourceTree = "<group>"; };
 		BDE06FF620046AE0008D7661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,16 +84,15 @@
 		0D804B1F1FE85D9F00F0F2A8 /* RaceStandings */ = {
 			isa = PBXGroup;
 			children = (
+				0DE35D7420056064008AB75C /* Settings */,
+				0D804B241FE85D9F00F0F2A8 /* Main.storyboard */,
+				0DE35D71200551B8008AB75C /* Main */,
 				BD9B113D1FEDCC7200B1953C /* Models */,
 				0D804B3C1FEAF79F00F0F2A8 /* Supporting Files */,
 				0D804B391FEAF5AE00F0F2A8 /* Service */,
 				0D804B201FE85D9F00F0F2A8 /* AppDelegate.swift */,
-				0D804B221FE85D9F00F0F2A8 /* ViewController.swift */,
-				0D804B241FE85D9F00F0F2A8 /* Main.storyboard */,
 				0D804B291FE85D9F00F0F2A8 /* LaunchScreen.storyboard */,
 				0D804B2C1FE85D9F00F0F2A8 /* Info.plist */,
-				0D804B351FE9A65700F0F2A8 /* ViewModel.swift */,
-				0D804B371FE9C75000F0F2A8 /* StandingsCell.swift */,
 			);
 			path = RaceStandings;
 			sourceTree = "<group>";
@@ -110,6 +113,25 @@
 				0D804B3D1FEAF84F00F0F2A8 /* Constants.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0DE35D71200551B8008AB75C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0D804B351FE9A65700F0F2A8 /* ViewModel.swift */,
+				0D804B221FE85D9F00F0F2A8 /* RacerStandingsViewController.swift */,
+				0D804B371FE9C75000F0F2A8 /* StandingsCell.swift */,
+				0DE35D72200553E3008AB75C /* RacerStandings.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0DE35D7420056064008AB75C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0DE35D7520056188008AB75C /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		360F9E83E499785AD69D9D04 /* Frameworks */ = {
@@ -201,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE35D73200553E3008AB75C /* RacerStandings.storyboard in Resources */,
 				0D804B2B1FE85D9F00F0F2A8 /* LaunchScreen.storyboard in Resources */,
 				BDE06FF720046AE0008D7661 /* Assets.xcassets in Resources */,
 				0D804B261FE85D9F00F0F2A8 /* Main.storyboard in Resources */,
@@ -285,12 +308,13 @@
 				0D804B3B1FEAF66600F0F2A8 /* NetworkManager.swift in Sources */,
 				0D804B401FEB02F900F0F2A8 /* NetworkError.swift in Sources */,
 				0D804B421FEB066800F0F2A8 /* Racer.swift in Sources */,
-				0D804B231FE85D9F00F0F2A8 /* ViewController.swift in Sources */,
+				0D804B231FE85D9F00F0F2A8 /* RacerStandingsViewController.swift in Sources */,
 				0D804B211FE85D9F00F0F2A8 /* AppDelegate.swift in Sources */,
 				0D804B361FE9A65700F0F2A8 /* ViewModel.swift in Sources */,
 				0D804B3E1FEAF84F00F0F2A8 /* Constants.swift in Sources */,
 				0D804B381FE9C75000F0F2A8 /* StandingsCell.swift in Sources */,
 				0D804B331FE86AE400F0F2A8 /* Standings.swift in Sources */,
+				0DE35D7620056188008AB75C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
