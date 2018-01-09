@@ -21,6 +21,7 @@
 		7DEA990F248FA7045E0D48A4 /* Pods_RxSwiftFun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E2BD261C02DFFA33FC0819 /* Pods_RxSwiftFun.framework */; };
 		BD9B113F1FEDCD0400B1953C /* Constructors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B113E1FEDCD0400B1953C /* Constructors.swift */; };
 		BDE06FF720046AE0008D7661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE06FF620046AE0008D7661 /* Assets.xcassets */; };
+		BDE06FF920047D5B008D7661 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE06FF820047D5B008D7661 /* Year.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		41F99515D6A13DD7D9FD7A94 /* Pods-RxSwiftFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftFun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftFun/Pods-RxSwiftFun.debug.xcconfig"; sourceTree = "<group>"; };
 		BD9B113E1FEDCD0400B1953C /* Constructors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constructors.swift; sourceTree = "<group>"; };
 		BDE06FF620046AE0008D7661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDE06FF820047D5B008D7661 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				0D804B3F1FEB02F900F0F2A8 /* NetworkError.swift */,
 				0D804B3A1FEAF66600F0F2A8 /* NetworkManager.swift */,
+				BDE06FF820047D5B008D7661 /* Year.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE06FF920047D5B008D7661 /* Year.swift in Sources */,
 				BD9B113F1FEDCD0400B1953C /* Constructors.swift in Sources */,
 				0D804B3B1FEAF66600F0F2A8 /* NetworkManager.swift in Sources */,
 				0D804B401FEB02F900F0F2A8 /* NetworkError.swift in Sources */,

@@ -10,17 +10,27 @@ import UIKit
 import RxSwift
 import RxDataSources
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var selectYearLabel: UIBarButtonItem!
     
+    var pickerView: UIPickerView = UIPickerView()
     var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfStandings>?
     let disposeBag = DisposeBag()
     let viewModel = ViewModel()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        selectYearLabel.target = self
+        selectYearLabel.action = #selector(selectYearPressed)
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.title = "Standings"
         
@@ -43,11 +53,30 @@ class ViewController: UIViewController {
 
     }
 
+    @objc private func selectYearPressed() {
+        print("Select Year Pressed")
+        self.view.addSubview(pickerView)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    //MARK: Delegate Methods
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Year.currentYear()-Year.minimumYear
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let years = Array(Year.minimumYear...Year.currentYear())
+        return String(years[row])
+    }
 }
 
