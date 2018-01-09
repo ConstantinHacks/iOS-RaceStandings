@@ -1,6 +1,0 @@
-framework module Pods_RxSwiftFun {
-  umbrella header "Pods-RxSwiftFun-umbrella.h"
-
-  export *
-  module * { export * }
-}
