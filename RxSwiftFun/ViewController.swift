@@ -21,12 +21,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.topItem?.title = "Standings"
+        
         let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfStandings>(
             configureCell: { ds, collectionView, indexPath, item in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StandingsCellIdentifier", for: indexPath) as! StandingsCell
                 cell.placeLabel?.text = String(item.place)
                 cell.nameLabel?.text = item.racerDetails.firstName + " " + item.racerDetails.lastName
-                cell.constructorLabel?.text = item.constructorName
+                cell.constructorLabel?.text = item.constructorName.name
                 cell.pointsLabel?.text = String(item.points)
                 return cell
         })
@@ -37,10 +40,6 @@ class ViewController: UIViewController {
                     .bind(to: self.collectionView.rx.items(dataSource: dataSource))
                     .disposed(by: self.disposeBag)
             }
-        
-//        NetworkManager.getStandings().map{
-//                [SectionOfStandings(header: "First Section", items: $0)]
-//            }.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 
     }
 

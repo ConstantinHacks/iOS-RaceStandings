@@ -16,13 +16,13 @@ import SwiftyJSON
 struct Standings {
     let place: String
     let racerDetails: Racer
-    let constructorName: String
+    let constructorName: Constructor
     let points: String
     
-    init?(_ json: JSON) {
+    init(_ json: JSON) {
         place = json["position"].stringValue
         racerDetails = Racer(json["Driver"])
-        constructorName = "VAUXHALL"
+        constructorName = Constructor(json["Constructors"][0])
         points = json["points"].stringValue
     }
 }
