@@ -42,6 +42,8 @@ class SettingsViewController : UITableViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        yearTextField.text = String(Year.selectedYear)
+        
         createToolBar()
         setUpPickerView()
         

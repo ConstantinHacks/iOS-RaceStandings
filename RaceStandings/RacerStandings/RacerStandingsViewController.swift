@@ -13,26 +13,26 @@ import RxDataSources
 class RacerStandingsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var selectYearLabel: UIBarButtonItem!
-    
     
     var dataSource: RxCollectionViewSectionedReloadDataSource<SectionOfStandings>?
     let disposeBag = DisposeBag()
     let viewModel = ViewModel()
-    let years = Array(Year.minimumYear...Year.currentYear())
-    var selectedYear : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        setUpPickerView()
-//        createToolBar()
         
-        selectYearLabel.target = self
-        selectYearLabel.action = #selector(selectYearPressed)
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Standings (\(Year.currentYear()))"
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.dataSource = nil
+        
+        navigationController?.navigationBar.topItem?.title = "Standings (\(Year.selectedYear))"
         
         let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfStandings>(
             configureCell: { ds, collectionView, indexPath, item in
@@ -45,12 +45,12 @@ class RacerStandingsViewController: UIViewController {
         })
         
         NetworkManager.getStandings(){ standings in
-                let sections = [SectionOfStandings(header: "First Section", items: standings)]
-                Observable.just(sections)
-                    .bind(to: self.collectionView.rx.items(dataSource: dataSource))
-                    .disposed(by: self.disposeBag)
-            }
-
+            let sections = [SectionOfStandings(header: "First Section", items: standings)]
+            Observable.just(sections)
+                .bind(to: self.collectionView.rx.items(dataSource: dataSource))
+                .disposed(by: self.disposeBag)
+        }
+        
     }
     
     func createToolBar() {
@@ -72,10 +72,4 @@ class RacerStandingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    //MARK: Delegate Methods
-    
-    
 }
-
-
