@@ -49,13 +49,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael Schumacher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-8m-xOR">
-                                                            <rect key="frame" x="31.5" y="0.0" width="195" height="50"/>
+                                                            <rect key="frame" x="31.5" y="0.0" width="185" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scuderia Ferrari" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-4T-SBC">
-                                                            <rect key="frame" x="195" y="0.0" width="150" height="50"/>
+                                                            <rect key="frame" x="185" y="0.0" width="150" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="oWz-5c-kcu"/>
                                                             </constraints>
@@ -64,9 +64,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKv-cx-3F5">
-                                                            <rect key="frame" x="345" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="335" y="0.0" width="40" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="cY7-ts-rpe"/>
+                                                                <constraint firstAttribute="width" constant="40" id="cY7-ts-rpe"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>

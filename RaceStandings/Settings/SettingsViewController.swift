@@ -88,7 +88,7 @@ extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
  
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Year.currentYear()-Year.minimumYear
+        return Year.yearsArray.count
     }
  
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

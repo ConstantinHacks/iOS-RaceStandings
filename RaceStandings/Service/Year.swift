@@ -19,8 +19,13 @@ struct Year {
         set(v){UserDefaults.standard.set(v,forKey:"leaderBoardYear")}
     }
     
-    //TODO If it's before the first race-day, default to previous year
+    //If it's before the first race-day, default to previous year
     static func currentYear() -> Int{
-        return Calendar.current.component(.year, from: Date())
+        if(Calendar.current.component(.month, from: Date()) > 3){
+            return Calendar.current.component(.year, from: Date())
+        } else {
+            let oneYearAgo = Calendar.current.date(byAdding: .year,value: -1, to: Date())
+            return Calendar.current.component(.year, from: oneYearAgo!)
+        }
     }
 }
