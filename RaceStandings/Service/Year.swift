@@ -11,8 +11,15 @@ import Foundation
 struct Year {
     static let minimumYear = 1950
     
-    lazy var selectedYear = Year.currentYear()
+    // Generate an array of ints starting with 1950 up to the current year
+    static let yearsArray = Array(Year.minimumYear...Year.currentYear())
     
+    static var selectedYear: Int {
+        get{return UserDefaults.standard.integer(forKey: "leaderBoardYear")}
+        set(v){UserDefaults.standard.set(v,forKey:"leaderBoardYear")}
+    }
+    
+    //TODO If it's before the first race-day, default to previous year
     static func currentYear() -> Int{
         return Calendar.current.component(.year, from: Date())
     }

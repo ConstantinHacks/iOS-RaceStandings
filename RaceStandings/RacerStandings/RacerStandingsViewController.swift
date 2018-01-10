@@ -52,12 +52,6 @@ class RacerStandingsViewController: UIViewController {
             }
 
     }
-
-    func setUpPickerView(){
-//        pickerView.delegate = self
-//        pickerView.dataSource = self
-//        pickerView.isHidden = true
-    }
     
     func createToolBar() {
         let toolBar = UIToolbar()
@@ -73,11 +67,6 @@ class RacerStandingsViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @objc private func selectYearPressed() {
-        print("Select Year Pressed")
-//        pickerView.isHidden = false
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -87,29 +76,6 @@ class RacerStandingsViewController: UIViewController {
     //MARK: Delegate Methods
     
     
-
-    
-    
 }
 
-extension RacerStandingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Year.currentYear()-Year.minimumYear
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(years[row])
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedYear = years[row]
-        navigationController?.navigationBar.topItem?.title = "Standings (\(selectedYear!))"
-
-    }
-}
 

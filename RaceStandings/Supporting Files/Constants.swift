@@ -23,7 +23,10 @@ struct Constants {
 
     struct Network {
         static let rootURL: String = "https://ergast.com/api/f1/"
-        static let currentLeaderBoard: String = rootURL + "2017/driverStandings.json"
+        static var currentLeaderBoard: String {
+            let year = String(Year.selectedYear ?? Year.currentYear())
+            return "\(rootURL)\(year)/driverStandings.json"
+        }
     }
     
 }
