@@ -13,10 +13,15 @@ struct Racer{
     let firstName: String
     let lastName: String
     let nationality: String
+    let dateOfBirth: String
+    let wikipediaURL: String
+    
     
     init(_ json:JSON){
         firstName = json["givenName"].stringValue
         lastName = json["familyName"].stringValue
         nationality = json["nationality"].stringValue
+        dateOfBirth = json["dateOfBirth"].stringValue
+        wikipediaURL = json["url"].stringValue
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D25103C2007F9F800B621B2 /* RacerDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D25103B2007F9F800B621B2 /* RacerDetails.xib */; };
+		0D25103E200800D900B621B2 /* RacerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D25103D200800D900B621B2 /* RacerDetailsViewController.swift */; };
 		0D804B211FE85D9F00F0F2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B201FE85D9F00F0F2A8 /* AppDelegate.swift */; };
 		0D804B231FE85D9F00F0F2A8 /* RacerStandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D804B221FE85D9F00F0F2A8 /* RacerStandingsViewController.swift */; };
 		0D804B261FE85D9F00F0F2A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D804B241FE85D9F00F0F2A8 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D25103B2007F9F800B621B2 /* RacerDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RacerDetails.xib; sourceTree = "<group>"; };
+		0D25103D200800D900B621B2 /* RacerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacerDetailsViewController.swift; sourceTree = "<group>"; };
 		0D804B1D1FE85D9F00F0F2A8 /* RaceStandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceStandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D804B201FE85D9F00F0F2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D804B221FE85D9F00F0F2A8 /* RacerStandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacerStandingsViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D25103A2007F9D400B621B2 /* RacerDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0D25103B2007F9F800B621B2 /* RacerDetails.xib */,
+				0D25103D200800D900B621B2 /* RacerDetailsViewController.swift */,
+			);
+			path = RacerDetails;
+			sourceTree = "<group>";
+		};
 		0D804B141FE85D9F00F0F2A8 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		0D804B1F1FE85D9F00F0F2A8 /* RaceStandings */ = {
 			isa = PBXGroup;
 			children = (
+				0D25103A2007F9D400B621B2 /* RacerDetails */,
 				0DE35D7420056064008AB75C /* Settings */,
 				0D804B241FE85D9F00F0F2A8 /* Main.storyboard */,
 				0DE35D71200551B8008AB75C /* RacerStandings */,
@@ -230,6 +244,7 @@
 				0D804B2B1FE85D9F00F0F2A8 /* LaunchScreen.storyboard in Resources */,
 				BDE06FF720046AE0008D7661 /* Assets.xcassets in Resources */,
 				0D804B261FE85D9F00F0F2A8 /* Main.storyboard in Resources */,
+				0D25103C2007F9F800B621B2 /* RacerDetails.xib in Resources */,
 				0DE35D782005634D008AB75C /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +334,7 @@
 				0D804B381FE9C75000F0F2A8 /* StandingsCell.swift in Sources */,
 				0D804B331FE86AE400F0F2A8 /* Standings.swift in Sources */,
 				0DE35D7620056188008AB75C /* SettingsViewController.swift in Sources */,
+				0D25103E200800D900B621B2 /* RacerDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
