@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class StandingsCell: UICollectionViewCell {
+    
+    var racerInfo: Racer? = nil
+    
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var constructorLabel: UILabel!

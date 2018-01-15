@@ -15,6 +15,24 @@ class RacerDetailsViewController: UIViewController {
     @IBOutlet weak var nationalityLabel: UILabel!
     @IBOutlet weak var DOBLabel: UILabel!
     @IBOutlet weak var wikipediaButton: UIButton!
+    
+    var racer : Racer?
+    
+    override func viewDidLoad() {
+        guard let racer = racer else {
+            return
+        }
 
+        nameLabel.text = racer.firstName + " " + racer.lastName
+        nationalityLabel.text = racer.nationality
+        DOBLabel.text = racer.dateOfBirth
+        
+        
+        super.viewDidLoad()
+    }
+    
+
+    
+    
     
 }

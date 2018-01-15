@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d0O-jn-gMn">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,72 +15,73 @@
             <objects>
                 <viewController id="wPi-T8-wB0" customClass="RacerStandingsViewController" customModule="RaceStandings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="faL-hq-1wY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F2r-yj-ctS">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F2r-yj-ctS">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bLf-xT-tX2">
-                                    <size key="itemSize" width="375" height="50"/>
+                                    <size key="itemSize" width="320" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StandingsCellIdentifier" id="HJT-ag-grK" customClass="StandingsCell" customModule="RaceStandings" customModuleProvider="target">
-                                        <rect key="frame" x="19.5" y="0.0" width="375" height="50"/>
+                                    <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="StandingsCellIdentifier" id="HJT-ag-grK" customClass="StandingsCell" customModule="RaceStandings" customModuleProvider="target">
+                                        <rect key="frame" x="47" y="0.0" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-AG-a8I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zg-v0-crZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctm-YA-nil">
-                                                            <rect key="frame" x="0.0" y="0.0" width="31.5" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="31.329999999999998" id="L2t-Ug-fWV"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctm-YA-nil">
+                                                            <rect key="frame" x="10" y="15.000000000000002" width="15.666666666666664" height="20.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael Schumacher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-8m-xOR">
-                                                            <rect key="frame" x="31.5" y="0.0" width="185" height="50"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scuderia Ferrari" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-4T-SBC">
+                                                            <rect key="frame" x="148" y="0.0" width="123" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scuderia Ferrari" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-4T-SBC">
-                                                            <rect key="frame" x="185" y="0.0" width="150" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="oWz-5c-kcu"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKv-cx-3F5">
+                                                            <rect key="frame" x="282" y="15.000000000000002" width="28" height="20.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKv-cx-3F5">
-                                                            <rect key="frame" x="335" y="0.0" width="40" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="40" id="cY7-ts-rpe"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Michael Schumacher" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-8m-xOR">
+                                                            <rect key="frame" x="34" y="0.0" width="115" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                </stackView>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="rKv-cx-3F5" firstAttribute="top" secondItem="6zg-v0-crZ" secondAttribute="top" constant="15" id="1vn-dd-KxW"/>
+                                                        <constraint firstItem="ctm-YA-nil" firstAttribute="leading" secondItem="6zg-v0-crZ" secondAttribute="leading" constant="10" id="7q1-oQ-ENi"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ctm-YA-nil" secondAttribute="bottom" constant="15" id="Ajd-Eb-Xfh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rKv-cx-3F5" secondAttribute="trailing" constant="10" id="Dfq-6d-BYq"/>
+                                                        <constraint firstItem="ctm-YA-nil" firstAttribute="top" secondItem="6zg-v0-crZ" secondAttribute="top" constant="15" id="b5t-u6-DgZ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rKv-cx-3F5" secondAttribute="bottom" constant="15" id="k05-cf-eAI"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="sFG-AG-a8I" firstAttribute="leading" secondItem="HJT-ag-grK" secondAttribute="leading" id="8WA-0d-qpt"/>
-                                            <constraint firstAttribute="trailing" secondItem="sFG-AG-a8I" secondAttribute="trailing" id="HDY-gZ-YJE"/>
-                                            <constraint firstAttribute="bottom" secondItem="sFG-AG-a8I" secondAttribute="bottom" id="fjl-fp-3Ow"/>
-                                            <constraint firstItem="sFG-AG-a8I" firstAttribute="top" secondItem="HJT-ag-grK" secondAttribute="top" id="rNy-AO-OLe"/>
+                                            <constraint firstItem="6zg-v0-crZ" firstAttribute="leading" secondItem="HJT-ag-grK" secondAttribute="leading" id="6C6-L8-6JG"/>
+                                            <constraint firstItem="6zg-v0-crZ" firstAttribute="top" secondItem="HJT-ag-grK" secondAttribute="top" id="9ob-22-iKb"/>
+                                            <constraint firstAttribute="trailing" secondItem="6zg-v0-crZ" secondAttribute="trailing" id="TvG-a6-dvq"/>
+                                            <constraint firstAttribute="bottom" secondItem="6zg-v0-crZ" secondAttribute="bottom" id="fbz-uX-01N"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="constructorLabel" destination="0hg-4T-SBC" id="Sc3-6g-hbD"/>
@@ -93,6 +94,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F2r-yj-ctS" firstAttribute="top" secondItem="ZsJ-93-DGM" secondAttribute="top" id="eO5-CH-VGl"/>
+                            <constraint firstItem="F2r-yj-ctS" firstAttribute="leading" secondItem="ZsJ-93-DGM" secondAttribute="leading" id="eRt-Nb-xh9"/>
+                            <constraint firstItem="F2r-yj-ctS" firstAttribute="bottom" secondItem="ZsJ-93-DGM" secondAttribute="bottom" id="kAx-LQ-fqb"/>
+                            <constraint firstItem="F2r-yj-ctS" firstAttribute="trailing" secondItem="ZsJ-93-DGM" secondAttribute="trailing" id="sg7-kn-GBy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZsJ-93-DGM"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Ff-Vs-CLU"/>
@@ -102,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c41-DT-eBS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="-580"/>
+            <point key="canvasLocation" x="572.46376811594212" y="-581.25"/>
         </scene>
         <!--Racer Standings-->
         <scene sceneID="GoT-aU-JaN">
@@ -111,7 +118,7 @@
                     <tabBarItem key="tabBarItem" title="Racer Standings" id="gQT-C7-DbD"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="efs-3j-kiY">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

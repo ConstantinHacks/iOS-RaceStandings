@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxDataSources
 
-class RacerStandingsViewController: UIViewController {
+class RacerStandingsViewController: UIViewController, UIViewControllerPreviewingDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,18 +21,39 @@ class RacerStandingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         navigationController?.navigationBar.prefersLargeTitles = true
+ 
+        if( traitCollection.forceTouchCapability == .available){
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        
+        collectionView.rx.itemSelected
+            .debug("Collection View Cell Selected")
+            .subscribe(onNext: { indexPath in
+                let cell = self.collectionView.cellForItem(at: indexPath) as? StandingsCell
+                
+                if let racerInfo = cell?.racerInfo{
+                    self.segueToDriverDetails(racerInfo: racerInfo)
+                }
+                
+            }).disposed(by: disposeBag)
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func segueToDriverDetails(racerInfo: Racer){
+        let destination = RacerDetailsViewController(nibName: "RacerDetails", bundle: Bundle.main)
+        destination.racer = racerInfo
+        self.show(destination, sender: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         collectionView.dataSource = nil
         
         navigationController?.navigationBar.topItem?.title = "Standings (\(Year.selectedYear))"
+        
+        collectionView.allowsSelection = true
         
         let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfStandings>(
             configureCell: { ds, collectionView, indexPath, item in
@@ -41,6 +62,8 @@ class RacerStandingsViewController: UIViewController {
                 cell.nameLabel?.text = item.racerDetails.firstName + " " + item.racerDetails.lastName
                 cell.constructorLabel?.text = item.constructorName.name
                 cell.pointsLabel?.text = String(item.points)
+                cell.racerInfo = item.racerDetails
+        
                 return cell
         })
         
@@ -53,23 +76,42 @@ class RacerStandingsViewController: UIViewController {
         
     }
     
-    func createToolBar() {
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,action: #selector(RacerStandingsViewController.dismissKeyboard))
-        
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView?.indexPathForItem(at: location) else { return nil }
+        
+        guard let cell = collectionView?.cellForItem(at: indexPath) as? StandingsCell else { return nil }
+        
+        let racerDetailVC = RacerDetailsViewController(nibName: "RacerDetails", bundle: Bundle.main)
+        
+        let racerInfo = cell.racerInfo
+        
+        racerDetailVC.racer = racerInfo
+        
+        racerDetailVC.preferredContentSize = CGSize(width: 0.0, height: 300)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return racerDetailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit,sender: self)
+    }
+    
 }
+
+
+
+extension RacerStandingsViewController: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 50);
+    }
+}
+
